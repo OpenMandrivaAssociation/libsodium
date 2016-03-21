@@ -63,11 +63,11 @@ make check
 %install
 %makeinstall_std
 
-rm -f %{buildroot}%{_libdir}/%{libname}.la
+rm -f %{buildroot}%{_libdir}/*.la
 
 %files -n %{libname}
 %license LICENSE
-%{_libdir}/%{name}.so.%{soname}*
+%{_libdir}/%{name}.so.%{major}*
 
 %files -n %{develname}
 %doc AUTHORS ChangeLog README.markdown THANKS
