@@ -67,11 +67,11 @@ rm -f %{buildroot}%{_libdir}/%{libname}.la
 
 %files -n %{libname}
 %license LICENSE
-%{_libdir}/%{libname}.so.%{soname}*
+%{_libdir}/%{name}.so.%{soname}*
 
 %files -n %{develname}
 %doc AUTHORS ChangeLog README.markdown THANKS
 %{_includedir}/sodium.h
 %{_includedir}/sodium/
-%{_libdir}/%{libname}.so
-%{_libdir}/pkgconfig/%{libname}.pc
+%{_libdir}/%{name}.so
+%{_libdir}/pkgconfig/%{name}.pc
