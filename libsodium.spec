@@ -1,4 +1,4 @@
-%define major 18
+%define major 23
 %define libname %mklibname sodium %{major}
 %define develname %mklibname sodium -d
 
@@ -27,6 +27,7 @@ implementations of the NIST standards.
 %package -n %{libname}
 Summary:	The Sodium crypto library
 Group:		System/Libraries
+Obsoletes:	%{mklibname sodium 18} < 1.0.15
 
 %description -n %{libname}
 Sodium is a new, easy-to-use software library for encryption, decryption,
