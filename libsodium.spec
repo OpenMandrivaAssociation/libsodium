@@ -4,8 +4,8 @@
 
 Summary:	The Sodium crypto library
 Name:		libsodium
-Version:	1.0.15
-Release:	2
+Version:	1.0.17
+Release:	1
 License:	ISC
 Group:		System/Libraries
 URL:		http://libsodium.org/
