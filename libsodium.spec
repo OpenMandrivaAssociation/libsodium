@@ -43,7 +43,7 @@ higher security, primitives are faster across-the-board than most
 implementations of the NIST standards.
 
 %package -n %{develname}
-Summary:        Development files for %{name}
+Summary:	Development files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{EVRD}
 
@@ -52,17 +52,17 @@ This package contains libraries and header files for
 developing applications that use %{name} libraries.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure
-%make
+%make_build
 
 %check
 make check
 
 %install
-%makeinstall_std
+%make_install
 
 rm -f %{buildroot}%{_libdir}/*.la
 
