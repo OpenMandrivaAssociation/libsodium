@@ -1,11 +1,12 @@
-%define major 23
-%define libname %mklibname sodium %{major}
+%define major 26
+%define oldlibname %mklibname sodium 23
+%define libname %mklibname sodium
 %define develname %mklibname sodium -d
 
 Summary:	The Sodium crypto library
 Name:		libsodium
-Version:	1.0.18
-Release:	2
+Version:	1.0.19
+Release:	1
 License:	ISC
 Group:		System/Libraries
 URL:		http://libsodium.org/
@@ -28,6 +29,7 @@ implementations of the NIST standards.
 Summary:	The Sodium crypto library
 Group:		System/Libraries
 Obsoletes:	%{mklibname sodium 18} < 1.0.15
+%rename %{oldlibname}
 
 %description -n %{libname}
 Sodium is a new, easy-to-use software library for encryption, decryption,
@@ -52,10 +54,10 @@ This package contains libraries and header files for
 developing applications that use %{name} libraries.
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}-stable
+%configure
 
 %build
-%configure
 %make_build
 
 %check
@@ -63,8 +65,6 @@ make check
 
 %install
 %make_install
-
-rm -f %{buildroot}%{_libdir}/*.la
 
 %files -n %{libname}
 %{_libdir}/%{name}.so.%{major}*
