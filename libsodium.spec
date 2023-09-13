@@ -11,6 +11,7 @@ License:	ISC
 Group:		System/Libraries
 URL:		http://libsodium.org/
 Source0:	http://download.libsodium.org/libsodium/releases/%{name}-%{version}.tar.gz
+Patch0:		libsodium-arm-crypto-cflags.patch
 
 %description
 Sodium is a new, easy-to-use software library for encryption, decryption,

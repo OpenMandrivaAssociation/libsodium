@@ -1,0 +1,12 @@
+diff -up libsodium-stable/configure.ac.omv~ libsodium-stable/configure.ac
+--- libsodium-stable/configure.ac.omv~	2023-09-13 11:31:58.987218278 +0100
++++ libsodium-stable/configure.ac	2023-09-13 11:32:47.697301997 +0100
+@@ -421,6 +421,7 @@ AS_IF([test "x$EMSCRIPTEN" = "x"], [
+       ]])],
+       [
+         AC_MSG_RESULT(yes)
++        CFLAGS_ARMCRYPTO="-march=armv8-a+crypto+aes"
+         have_armcrypto=yes
+       ],
+       [
+diff -up libsodium-stable/src/libsodium/Makefile.am.omv~ libsodium-stable/src/libsodium/Makefile.am
