@@ -5,13 +5,14 @@
 
 Summary:	The Sodium crypto library
 Name:		libsodium
-Version:	1.0.19
+Version:	1.0.20
 Release:	1
 License:	ISC
 Group:		System/Libraries
 URL:		http://libsodium.org/
 Source0:	http://download.libsodium.org/libsodium/releases/%{name}-%{version}.tar.gz
 Patch0:		libsodium-arm-crypto-cflags.patch
+BuildSystem:	autotools
 
 %description
 Sodium is a new, easy-to-use software library for encryption, decryption,
@@ -54,18 +55,11 @@ Requires:	%{libname} = %{EVRD}
 This package contains libraries and header files for
 developing applications that use %{name} libraries.
 
-%prep
-%autosetup -p1 -n %{name}-stable
-%configure
-
-%build
-%make_build
-
+%if ! %{cross_compiling}
 %check
+cd _OMV_rpm_build
 make check
-
-%install
-%make_install
+%endif
 
 %files -n %{libname}
 %{_libdir}/%{name}.so.%{major}*
