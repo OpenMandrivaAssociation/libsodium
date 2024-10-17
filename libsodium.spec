@@ -9,7 +9,7 @@ Version:	1.0.20
 Release:	1
 License:	ISC
 Group:		System/Libraries
-URL:		http://libsodium.org/
+URL:		https://libsodium.org/
 Source0:	http://download.libsodium.org/libsodium/releases/%{name}-%{version}.tar.gz
 Patch0:		libsodium-arm-crypto-cflags.patch
 BuildSystem:	autotools
