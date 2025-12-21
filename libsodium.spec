@@ -14,6 +14,7 @@ Source0:	http://download.libsodium.org/libsodium/releases/%{name}-%{version}.tar
 Patch0:		libsodium-arm-crypto-cflags.patch
 BuildSystem:	autotools
 
+BuildRequires:	make
 %description
 Sodium is a new, easy-to-use software library for encryption, decryption,
 signatures, password hashing and more. It is a portable, cross-compilable,
